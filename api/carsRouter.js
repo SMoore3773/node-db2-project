@@ -62,7 +62,7 @@ router.put('/:id', async (req,res)=>{
         res.status(400).json({message:"this update requires changes"})
     }else {
        try{
-            await db('cars').where('id',id).update({vin: changes.vin, make: changes.make, model:changes.model, mileage: changes.mileage, transmission: changes.transmission, title: changes.title},['id','vin','make','model','mileage','transmission','title']);
+            await db('cars').where('id',id).update({vin: changes.vin, make: changes.make, model:changes.model, mileage: changes.mileage, transmission: changes.transmission, title: changes.title, modelYear: changes.modelYear},['id','vin','make','model','mileage','transmission','title','modelYear']);
             res.status(201).json({message:"update successful"})
         } catch(err){
             res.status(500).json({message:"error in updating car record"})
