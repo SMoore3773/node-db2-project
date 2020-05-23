@@ -12,5 +12,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schems.dropTableIfExists('cars');
+  return knex.schema.dropTableIfExists('cars');
 };
